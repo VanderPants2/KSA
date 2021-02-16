@@ -1,21 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Test</title>
-  </head>
-  <body>
-    <p>Hello World!</p>
-    <script>
-      axios.get("https://api.github.com/users/mapbox").then((response) => {
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.statusText);
-        console.log(response.headers);
-        console.log(response.config);
-      });
-    </script>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Taartenslag - KSA Sint-Lut Haaltert</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+			crossorigin="anonymous"
+		/>
+		<style>
+			/* Chrome, Safari, Edge, Opera */
+			input::-webkit-outer-spin-button,
+			input::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			/* Firefox */
+			input[type="number"] {
+				-moz-appearance: textfield;
+			}
+		</style>
+		<link rel="icon" href="./img/Logo.png" type="image/png" />
+	</head>
+	<body class="bg-light">
+		<div class="container">
+			<main id="main">
+				<div class="py-5 text-center">
+					<img
+						class="d-block mx-auto mb-4"
+						src="./img/Logo.png"
+						alt=""
+						width="72"
+					/>
+					<h2>Bestelformulier Taartenslag</h2>
+					<p class="lead">
+						Via dit formulier kan u makkelijk uw taarten bestellen.
+					</p>
+					<img src="./img/Banner.png" alt="" width="500px" />
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-4 m-2">
+						<label for="Voornaam" class="form-label">Voornaam</label>
+						<input
+							type="text"
+							id="Voornaam"
+							class="form-control"
+							aria-label="Voornaam"
+						/>
+					</div>
+					<div class="col-4 m-2">
+						<label for="Achternaam" class="form-label">Achternaam</label>
+						<input
+							type="text"
+							id="Achternaam"
+							class="form-control"
+							aria-label="Achternaam"
+						/>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-4 m-2">
+						<label for="Email" class="form-label">E-mail</label>
+						<input
+							type="email"
+							id="Email"
+							class="form-control"
+							aria-label="Email"
+						/>
+					</div>
+					<div class="col-4 m-2">
+						<label for="Telefoon" class="form-label">Telefoon / GSM</label>
+						<input
+							type="number"
+							id="Telefoon"
+							class="form-control"
+							aria-label="Telefoon"
+						/>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-3 m-2">
+						<label for="Taart1" class="form-label">Frangipanetaart</label>
+						<input
+							type="number"
+							id="Taart1"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+					</div>
+					<div class="col-3 m-2">
+						<label for="Taart2" class="form-label">Rijsttaart</label>
+						<input
+							type="number"
+							id="Taart2"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+					</div>
+					<div class="col-3 m-2">
+						<label for="Taart3" class="form-label">Appeltaart</label>
+						<input
+							type="number"
+							id="Taart3"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+					</div>
+				</div>
+				<div class="row justify-content-center m-2">
+					<div class="col-3 m-2">
+						<label for="Taart4" class="form-label">Flantaart</label>
+						<input
+							type="number"
+							id="Taart4"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+					</div>
+					<div class="col-3 m-2">
+						<label for="Taart5" class="form-label">Kriekentaart</label>
+						<input
+							type="number"
+							id="Taart5"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="text-center">
+						<p>
+							Tussen welke 2 uren zou u graag uw taart(en) komen ophalen?<br />Zo
+							kunnen wij inschatten wanneer we het meerste volk kunnen
+							verwachten.
+						</p>
+					</div>
+
+					<div class="col d-flex justify-content-center my-2">
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="12_13"
+								checked
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								12u - 13u
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="13_14"
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								13u - 14u
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="14_15"
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								14u - 15u
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="15_16"
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								15u - 16u
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="16_17"
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								16u - 17u
+							</label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input
+								class="form-check-input"
+								type="radio"
+								name="tijd"
+								id="17_18"
+							/>
+							<label class="form-check-label" for="flexRadioDefault1">
+								17u - 18u
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="d-flex justify-content-center mt-4">
+						<button type="submit" class="btn btn-danger" onclick="send_order()">
+							Plaats uw bestelling
+						</button>
+					</div>
+				</div>
+			</main>
+
+			<footer class="my-4 pt-2 text-muted text-center text-small">
+				<a href="https://www.payconiq.be/" target="_blank">
+					<img
+						src="./img/payconiq_logo.svg"
+						width="50px"
+						alt="payconiq"
+						class="rounded mx-3"
+				/></a>
+				<img
+					src="./img/cash_logo.svg"
+					width="50px"
+					alt="cash"
+					class="rounded mx-3"
+				/>
+				<p class="mb-1 mt-4">&copy; 2020-2021 KSA Sint-Lut Haaltert</p>
+			</footer>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script>
+			function send_order() {
+				if (validate()) {
+					return;
+				}
+				var Voornaam = document.getElementById("Voornaam").value;
+				var Achternaam = document.getElementById("Achternaam").value;
+				var Email = document.getElementById("Email").value;
+				var Telefoon = document.getElementById("Telefoon").value;
+				var Taart1 = document.getElementById("Taart1").value;
+				var Taart2 = document.getElementById("Taart2").value;
+				var Taart3 = document.getElementById("Taart3").value;
+				var Taart4 = document.getElementById("Taart4").value;
+				var Taart5 = document.getElementById("Taart5").value;
+				var data =
+					Voornaam +
+					" ; " +
+					Achternaam +
+					" ; " +
+					Email +
+					" ; " +
+					Telefoon +
+					" ; " +
+					uur() +
+					" ; " +
+					Taart1 +
+					" ; " +
+					Taart2 +
+					" ; " +
+					Taart3 +
+					" ; " +
+					Taart4 +
+					" ; " +
+					Taart5;
+				$("#main").load("/send_order", { data: data });
+			}
+			function validate() {
+				if (document.getElementById("Voornaam").value == "") {
+					alert(
+						"Oeps, je vulde niet alle velden correct in. \nVul je voornaam in."
+					);
+					return true;
+				} else if (document.getElementById("Achternaam").value == "") {
+					alert(
+						"Oeps, je vulde niet alle velden correct in.\nVul je achternaam in."
+					);
+					return true;
+				} else if (
+					document.getElementById("Email").value == "" ||
+					!document.getElementById("Email").value.includes("@")
+				) {
+					alert(
+						"Oeps, je vulde niet alle velden correct in.\nControleer je e-mailadres."
+					);
+					return true;
+				} else if (document.getElementById("Telefoon").value == "") {
+					alert(
+						"Oeps, je vulde niet alle velden correct in. \nVul je telefoonnummer in."
+					);
+					return true;
+				} else {
+					return false;
+				}
+			}
+			function uur() {
+				if (document.getElementById("12_13").checked) {
+					return "12u - 13u";
+				} else if (document.getElementById("13_14").checked) {
+					return "13u - 14u";
+				} else if (document.getElementById("14_15").checked) {
+					return "14u - 15u";
+				} else if (document.getElementById("15_16").checked) {
+					return "15u - 16u";
+				} else if (document.getElementById("16_17").checked) {
+					return "16u - 17u";
+				} else if (document.getElementById("17_18").checked) {
+					return "17u - 18u";
+				}
+			}
+		</script>
+	</body>
 </html>
