@@ -34,9 +34,18 @@
 						alt=""
 						width="72"
 					/>
-					<h2>Bestelformulier Taartenslag</h2>
+					<h1>Bestelformulier Taartenslag</h1>
 					<p class="lead">
-						Via dit formulier kan u makkelijk uw taarten bestellen.
+						Via dit formulier kan u makkelijk uw taarten bestellen.<br />
+						Indien u zelf niet om uw taart(en) kan komen bieden wij de optie aan
+						om te <br />leveren binnen groot Haaltert (Haaltert, Denderhoutem,
+						Heldergem <br />en Kerksken). Woont u buiten Haaltert en is het toch
+						onmogelijk om zelf uw <br />
+						taart(en) te komen ophalen kan u altijd contact opnemen <br />
+						via ons emailadres:
+						<a href="mailto:ksasintlut@outlook.com">ksasintlut@outlook.com</a>
+						en proberen <br />
+						wij u toch verder te helpen.<br />
 					</p>
 					<img
 						src="./img/Banner.png"
@@ -236,7 +245,7 @@
 				</div>
 				<div class="row justify-content-center">
 					<div class="d-flex justify-content-center mt-4">
-						<button type="submit" class="btn btn-danger" onclick="location.href='./bestelling.html';">
+						<button type="submit" class="btn btn-danger" onclick="send_order()">
 							Plaats uw bestelling
 						</button>
 					</div>
@@ -300,7 +309,7 @@
 					Taart4 +
 					" ; " +
 					Taart5;
-				$("#main").load("/send_order", { data: data });
+				location.href = "./bestelling.html";
 			}
 			function validate() {
 				if (document.getElementById("Voornaam").value == "") {
