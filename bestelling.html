@@ -27,7 +27,7 @@
 	<body class="bg-light">
 		<div class="container">
 			<main id="main">
-				<div class="py-5 text-center">
+				<div class="pt-5 pb-3 text-center">
 					<img
 						class="d-block mx-auto mb-4"
 						src="./img/Logo.png"
@@ -37,128 +37,74 @@
 					<h2>Bedankt voor uw bestelling!</h2>
 					<p class="lead">
 						We hebben uw bestelling goed ontvangen.<br />
-						Betalen gebeurt bij afhaling en kan enkel cash of via
-						<a href="http://www.payconiq.be/" target="_blank">Payconiq</a>.
+						Betalen kan enkel via overschrijving via uw favorite banking app.
 						<br />
-						Hieronder vindt uw een korte samenvatting van wat u besteld heefd
+						Hieronder vindt uw een korte samenvatting van wat u besteld heeft
 					</p>
 				</div>
-				<div class="py-5 text-center">
-					<p>
-						{Voornaam} {Achternaam} heeft {Aantal} Frangipanetaart(en), {Aantal}
-						Rijsttaart(en),<br />
-						{Aantal} Appeltaart(en), {Aantal} Flantaart(en) en {Aantal}
-						Kriekentaart(en) besteld.<br />
-						Bij problemen contacteren wij u op {Email} of op {GSM} <br />
-						U kan uw taarten komen afhalen op 13 maart tussen {Uren}<br />
-						Voor deze taarten betaald u {Prijs} euro. <br />
-						Gelieve hiervoor gepast geld mee te nemen.
-					</p>
+				<div class="row justify-content-center">
+					<div class="text-center">
+						<h4>Uw bestelling</h3>
+						<p>
+							{Aantal} Frangipanetaart(en), {Aantal} Rijsttaart(en), <br>{Aantal}
+							Appeltaart(en), {Aantal} Flantaart(en) en {Aantal}
+							Kriekentaart(en)
+						</p>
+					</div>
+					<div class="text-center">
+						<h4>Betalingsinfo</h4>
+						<p>NIET BETAALD is NIET BESTELD</p>
+					</div>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Rekeningnummer" class="form-label"
+							>Rekeningnummer (IBAN)</label
+						>
+						<input
+							class="form-control"
+							type="text"
+							placeholder="BE73 0014 3709 9860"
+							aria-label="Rekeningnummer"
+							readonly
+						/>
+						<label for="BIC" class="form-label mt-2">BIC-Code</label>
+						<input
+							class="form-control"
+							type="text"
+							placeholder="GEBA BE BB"
+							aria-label="BIC"
+							readonly
+						/>
+					</div>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Te_Betalen" class="form-label">Totaal te betalen</label>
+						<input
+							class="form-control"
+							type="text"
+							placeholder="{Prijs}"
+							aria-label="Te_Betalen"
+							readonly
+						/>
+						<label for="Mededeling" class="form-label mt-2">Mededeling</label>
+						<textarea
+							class="form-control"
+							type="text"
+							placeholder="Taartverkoop - {Voornaam} {Achternaam} - {Nr}"
+							aria-label="Mededeling"
+							rows="3"
+							readonly
+						></textarea>
+					</div>
 				</div>
 			</main>
-
-			<footer class="my-4 pt-2 text-muted text-center text-small">
-				<a href="https://www.payconiq.be/" target="_blank">
-					<img
-						src="./img/payconiq_logo.svg"
-						width="50px"
-						alt="payconiq"
-						class="rounded mx-3"
-				/></a>
-				<img
-					src="./img/cash_logo.svg"
-					width="50px"
-					alt="cash"
-					class="rounded mx-3"
-				/>
-				<p class="mb-1 mt-4">&copy; 2020-2021 KSA Sint-Lut Haaltert</p>
-			</footer>
 		</div>
+		<footer class="my-4 pt-2 text-muted text-center text-small">
+			<p class="mb-1 mt-4">&copy; 2020-2021 KSA Sint-Lut Haaltert</p>
+		</footer>
+		<!-- Optional JavaScript; choose one of the two! -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
 			crossorigin="anonymous"
 		></script>
-		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<script>
-			function send_order() {
-				if (validate()) {
-					return;
-				}
-				var Voornaam = document.getElementById("Voornaam").value;
-				var Achternaam = document.getElementById("Achternaam").value;
-				var Email = document.getElementById("Email").value;
-				var Telefoon = document.getElementById("Telefoon").value;
-				var Taart1 = document.getElementById("Taart1").value;
-				var Taart2 = document.getElementById("Taart2").value;
-				var Taart3 = document.getElementById("Taart3").value;
-				var Taart4 = document.getElementById("Taart4").value;
-				var Taart5 = document.getElementById("Taart5").value;
-				var data =
-					Voornaam +
-					" ; " +
-					Achternaam +
-					" ; " +
-					Email +
-					" ; " +
-					Telefoon +
-					" ; " +
-					uur() +
-					" ; " +
-					Taart1 +
-					" ; " +
-					Taart2 +
-					" ; " +
-					Taart3 +
-					" ; " +
-					Taart4 +
-					" ; " +
-					Taart5;
-				$("#main").load("/send_order", { data: data });
-			}
-			function validate() {
-				if (document.getElementById("Voornaam").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in. \nVul je voornaam in."
-					);
-					return true;
-				} else if (document.getElementById("Achternaam").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in.\nVul je achternaam in."
-					);
-					return true;
-				} else if (
-					document.getElementById("Email").value == "" ||
-					!document.getElementById("Email").value.includes("@")
-				) {
-					alert(
-						"Oeps, je vulde niet alle velden correct in.\nControleer je e-mailadres."
-					);
-					return true;
-				} else if (document.getElementById("Telefoon").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in. \nVul je telefoonnummer in."
-					);
-					return true;
-				} else {
-					return false;
-				}
-			}
-			function uur() {
-				if (document.getElementById("12_13").checked) {
-					return "12u - 13u";
-				} else if (document.getElementById("13_14").checked) {
-					return "13u - 14u";
-				} else if (document.getElementById("14_15").checked) {
-					return "14u - 15u";
-				} else if (document.getElementById("15_16").checked) {
-					return "15u - 16u";
-				} else if (document.getElementById("16_17").checked) {
-					return "16u - 17u";
-				} else if (document.getElementById("17_18").checked) {
-					return "17u - 18u";
-				}
-			}
-		</script>
 	</body>
 </html>
