@@ -55,28 +55,15 @@
 					/>
 				</div>
 				<div class="row justify-content-center">
-					<div class="col-4 m-2">
-						<label for="Voornaam" class="form-label">Voornaam</label>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Voornaam" class="form-label mt-2">Voornaam</label>
 						<input
 							type="text"
 							id="Voornaam"
 							class="form-control"
 							aria-label="Voornaam"
 						/>
-					</div>
-					<div class="col-4 m-2">
-						<label for="Achternaam" class="form-label">Achternaam</label>
-						<input
-							type="text"
-							id="Achternaam"
-							class="form-control"
-							aria-label="Achternaam"
-						/>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-4 m-2">
-						<label for="Email" class="form-label">E-mail</label>
+						<label for="Email" class="form-label mt-2">E-mail</label>
 						<input
 							type="email"
 							id="Email"
@@ -84,8 +71,16 @@
 							aria-label="Email"
 						/>
 					</div>
-					<div class="col-4 m-2">
-						<label for="Telefoon" class="form-label">Telefoon / GSM</label>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Achternaam" class="form-label mt-2">Achternaam</label>
+						<input
+							type="text"
+							id="Achternaam"
+							class="form-control"
+							aria-label="Achternaam"
+						/>
+
+						<label for="Telefoon" class="form-label mt-2">Telefoon / GSM</label>
 						<input
 							type="number"
 							id="Telefoon"
@@ -93,10 +88,8 @@
 							aria-label="Telefoon"
 						/>
 					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-3 m-2">
-						<label for="Taart1" class="form-label">Frangipanetaart</label>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Taart1" class="form-label mt-2">Frangipanetaart</label>
 						<input
 							type="number"
 							id="Taart1"
@@ -105,20 +98,7 @@
 							min="0"
 							value="0"
 						/>
-					</div>
-					<div class="col-3 m-2">
-						<label for="Taart2" class="form-label">Rijsttaart</label>
-						<input
-							type="number"
-							id="Taart2"
-							class="form-control"
-							aria-label="Voornaam"
-							min="0"
-							value="0"
-						/>
-					</div>
-					<div class="col-3 m-2">
-						<label for="Taart3" class="form-label">Appeltaart</label>
+						<label for="Taart3" class="form-label mt-2">Appeltaart</label>
 						<input
 							type="number"
 							id="Taart3"
@@ -128,10 +108,18 @@
 							value="0"
 						/>
 					</div>
-				</div>
-				<div class="row justify-content-center m-2">
-					<div class="col-3 m-2">
-						<label for="Taart4" class="form-label">Flantaart</label>
+					<div class="col-md-4 col-sm-6 m-1">
+						<label for="Taart2" class="form-label mt-2">Rijsttaart</label>
+						<input
+							type="number"
+							id="Taart2"
+							class="form-control"
+							aria-label="Voornaam"
+							min="0"
+							value="0"
+						/>
+
+						<label for="Taart4" class="form-label mt-2">Flantaart</label>
 						<input
 							type="number"
 							id="Taart4"
@@ -141,8 +129,8 @@
 							value="0"
 						/>
 					</div>
-					<div class="col-3 m-2">
-						<label for="Taart5" class="form-label">Kriekentaart</label>
+					<div class="col-md-4 col-sm-6">
+						<label for="Taart5" class="form-label mt-2">Kriekentaart</label>
 						<input
 							type="number"
 							id="Taart5"
@@ -153,95 +141,24 @@
 						/>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row m-3">
 					<div class="text-center">
 						<p>
-							Tussen welke 2 uren zou u graag uw taart(en) komen ophalen?<br />Zo
-							kunnen wij inschatten wanneer we het meerste volk kunnen
-							verwachten.
+							Tussen welke 2 uren zou u zaterdag 20 maart graag uw taart(en)
+							komen ophalen?<br />Zo kunnen wij inschatten wanneer we het
+							meerste volk kunnen verwachten.
 						</p>
 					</div>
 				</div>
-				<div class="row mx-5 justify-content-center">
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="12_13"
-								checked
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								12u - 13u
-							</label>
-						</div>
-					</div>
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="13_14"
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								13u - 14u
-							</label>
-						</div>
-					</div>
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="14_15"
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								14u - 15u
-							</label>
-						</div>
-					</div>
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="15_16"
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								15u - 16u
-							</label>
-						</div>
-					</div>
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="16_17"
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								16u - 17u
-							</label>
-						</div>
-					</div>
-					<div class="col col-sm-4 d-flex justify-content-center my-2">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								name="tijd"
-								id="17_18"
-							/>
-							<label class="form-check-label" for="flexRadioDefault1">
-								17u - 18u
-							</label>
-						</div>
-					</div>
+				<div class="row mx-2 justify-content-center">
+					<select class="form-select" id="Uur" style="width: 350px">
+						<option value="12u - 13u" selected>12u - 13u</option>
+						<option value="13u - 14u">13u - 14u</option>
+						<option value="14u - 15u">14u - 15u</option>
+						<option value="15u - 16u">15u - 16u</option>
+						<option value="16u - 17u">16u - 17u</option>
+						<option value="17u - 18u">17u - 18u</option>
+					</select>
 				</div>
 				<div class="row justify-content-center">
 					<div class="d-flex justify-content-center mt-4">
@@ -253,19 +170,6 @@
 			</main>
 
 			<footer class="my-4 pt-2 text-muted text-center text-small">
-				<a href="https://www.payconiq.be/" target="_blank">
-					<img
-						src="./img/payconiq_logo.svg"
-						width="50px"
-						alt="payconiq"
-						class="rounded mx-3"
-				/></a>
-				<img
-					src="./img/cash_logo.svg"
-					width="50px"
-					alt="cash"
-					class="rounded mx-3"
-				/>
 				<p class="mb-1 mt-4">&copy; 2020-2021 KSA Sint-Lut Haaltert</p>
 			</footer>
 		</div>
@@ -284,6 +188,7 @@
 				var Achternaam = document.getElementById("Achternaam").value;
 				var Email = document.getElementById("Email").value;
 				var Telefoon = document.getElementById("Telefoon").value;
+				var Uur = document.getElementById("Uur").value;
 				var Taart1 = document.getElementById("Taart1").value;
 				var Taart2 = document.getElementById("Taart2").value;
 				var Taart3 = document.getElementById("Taart3").value;
@@ -298,7 +203,7 @@
 					" ; " +
 					Telefoon +
 					" ; " +
-					uur() +
+					Uur +
 					" ; " +
 					Taart1 +
 					" ; " +
@@ -309,6 +214,7 @@
 					Taart4 +
 					" ; " +
 					Taart5;
+				console.log(data);
 				location.href = "./bestelling.html";
 			}
 			function validate() {
@@ -337,21 +243,6 @@
 					return true;
 				} else {
 					return false;
-				}
-			}
-			function uur() {
-				if (document.getElementById("12_13").checked) {
-					return "12u - 13u";
-				} else if (document.getElementById("13_14").checked) {
-					return "13u - 14u";
-				} else if (document.getElementById("14_15").checked) {
-					return "14u - 15u";
-				} else if (document.getElementById("15_16").checked) {
-					return "15u - 16u";
-				} else if (document.getElementById("16_17").checked) {
-					return "16u - 17u";
-				} else if (document.getElementById("17_18").checked) {
-					return "17u - 18u";
 				}
 			}
 		</script>
