@@ -24,7 +24,7 @@
 		</style>
 		<link rel="icon" href="./img/Logo.png" type="image/png" />
 	</head>
-	<body class="bg-light">
+	<body class="bg-light" onload="afhaal()">
 		<div class="container">
 			<main id="main">
 				<div class="py-5 text-center">
@@ -37,15 +37,7 @@
 					<h1>Bestelformulier Taartenslag</h1>
 					<p class="lead">
 						Via dit formulier kan u makkelijk uw taarten bestellen.<br />
-						Indien u zelf niet om uw taart(en) kan komen kan u altijd contact
-						opnemen <br />via ons emailadres:
-						<a href="mailto:ksasintlut@outlook.com">ksasintlut@outlook.com</a>
-						of onze
-						<a
-							href="https://www.facebook.com/KSASintLutHaaltert"
-							target="_blank"
-							>Facebookpagina</a
-						><br />en proberen wij u verder te helpen.<br />
+						De prijs per taart bedraagt &euro;8,5.
 					</p>
 					<img
 						src="./img/Banner.png"
@@ -142,23 +134,96 @@
 					</div>
 				</div>
 				<div class="row m-3">
-					<div class="text-center">
-						<p>
-							Tussen welke 2 uren zou u zaterdag 20 maart graag uw taart(en)
-							komen ophalen?<br />Zo kunnen wij inschatten wanneer we het
-							meerste volk kunnen verwachten.
-						</p>
+					<div class="text-center m-3">
+						<h3>Afhaal / Levering</h3>
+						<div class="btn-group m-2" role="group">
+							<input
+								type="radio"
+								class="btn-check"
+								name="btnradio"
+								id="btn_Afhaal"
+								autocomplete="off"
+								onclick="afhaal()"
+								checked
+							/>
+							<label class="btn btn-outline-danger" for="btn_Afhaal"
+								>Afhaal</label
+							>
+
+							<input
+								type="radio"
+								class="btn-check"
+								name="btnradio"
+								id="btn_Levering"
+								autocomplete="off"
+								onclick="levering()"
+							/>
+							<label class="btn btn-outline-danger" for="btn_Levering"
+								>Levering</label
+							>
+						</div>
 					</div>
 				</div>
-				<div class="row mx-2 justify-content-center">
-					<select class="form-select" id="Uur" style="width: 350px">
-						<option value="12u - 13u" selected>12u - 13u</option>
-						<option value="13u - 14u">13u - 14u</option>
-						<option value="14u - 15u">14u - 15u</option>
-						<option value="15u - 16u">15u - 16u</option>
-						<option value="16u - 17u">16u - 17u</option>
-						<option value="17u - 18u">17u - 18u</option>
-					</select>
+				<div id="levering">
+					<div class="row justify-content-center m-3">
+						<div class="text-center">
+							<p>
+								Wij leveren enkel in Groot Haaltert (Haaltert, Denderhoutem,<br />
+								Heldergem, Kerksken), Erpe-Mere, Nieuwerkerken en
+								Erembodegem.<br />Voor u levering betaald u &euro;1,5 extra.
+							</p>
+						</div>
+						<div class="col-md-4 col-sm-6 m-1">
+							<label for="Straat" class="form-label mt-2">Straat</label>
+							<input
+								type="text"
+								id="Straat"
+								class="form-control"
+								aria-label="Straat"
+							/>
+							<label for="Gemeente" class="form-label mt-2">Gemeente</label>
+							<input
+								type="text"
+								id="Gemeente"
+								class="form-control"
+								aria-label="Gemeente"
+							/>
+						</div>
+						<div class="col-md-4 col-sm-6 m-1">
+							<label for="Huisnummer" class="form-label mt-2">Huisnummer</label>
+							<input
+								type="number"
+								id="Huisnummer"
+								class="form-control"
+								aria-label="Huisnummer"
+								min="0"
+							/>
+						</div>
+					</div>
+				</div>
+				<div id="afhaal">
+					<div class="row m-3">
+						<div class="text-center">
+							<p>
+								Tussen welke 2 uren zou u zaterdag 20 maart graag uw taart(en)
+								komen ophalen?<br />Zo kunnen wij inschatten wanneer we het
+								meerste volk kunnen verwachten.<br />Als zaterdag echt niet past
+								bieden wij ook de optie aan om uw taart zondag op de activiteit
+								af te halen.
+							</p>
+						</div>
+					</div>
+					<div class="row mx-2 justify-content-center">
+						<select class="form-select" id="Uur" style="width: 350px">
+							<option value="12u - 13u" selected>12u - 13u</option>
+							<option value="13u - 14u">13u - 14u</option>
+							<option value="14u - 15u">14u - 15u</option>
+							<option value="15u - 16u">15u - 16u</option>
+							<option value="16u - 17u">16u - 17u</option>
+							<option value="17u - 18u">17u - 18u</option>
+							<option value="zondag">Zondag</option>
+						</select>
+					</div>
 				</div>
 				<div class="row justify-content-center">
 					<div class="d-flex justify-content-center mt-4">
@@ -179,72 +244,6 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-		<script>
-			function send_order() {
-				if (validate()) {
-					return;
-				}
-				var Voornaam = document.getElementById("Voornaam").value;
-				var Achternaam = document.getElementById("Achternaam").value;
-				var Email = document.getElementById("Email").value;
-				var Telefoon = document.getElementById("Telefoon").value;
-				var Uur = document.getElementById("Uur").value;
-				var Taart1 = document.getElementById("Taart1").value;
-				var Taart2 = document.getElementById("Taart2").value;
-				var Taart3 = document.getElementById("Taart3").value;
-				var Taart4 = document.getElementById("Taart4").value;
-				var Taart5 = document.getElementById("Taart5").value;
-				var data =
-					Voornaam +
-					" ; " +
-					Achternaam +
-					" ; " +
-					Email +
-					" ; " +
-					Telefoon +
-					" ; " +
-					Uur +
-					" ; " +
-					Taart1 +
-					" ; " +
-					Taart2 +
-					" ; " +
-					Taart3 +
-					" ; " +
-					Taart4 +
-					" ; " +
-					Taart5;
-				console.log(data);
-				location.href = "./bestelling.html";
-			}
-			function validate() {
-				if (document.getElementById("Voornaam").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in. \nVul je voornaam in."
-					);
-					return true;
-				} else if (document.getElementById("Achternaam").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in.\nVul je achternaam in."
-					);
-					return true;
-				} else if (
-					document.getElementById("Email").value == "" ||
-					!document.getElementById("Email").value.includes("@")
-				) {
-					alert(
-						"Oeps, je vulde niet alle velden correct in.\nControleer je e-mailadres."
-					);
-					return true;
-				} else if (document.getElementById("Telefoon").value == "") {
-					alert(
-						"Oeps, je vulde niet alle velden correct in. \nVul je telefoonnummer in."
-					);
-					return true;
-				} else {
-					return false;
-				}
-			}
-		</script>
+		<script src="./main.js"></script>
 	</body>
 </html>

@@ -37,7 +37,7 @@
 					<h2>Bedankt voor uw bestelling!</h2>
 					<p class="lead">
 						We hebben uw bestelling goed ontvangen.<br />
-						Betalen kan enkel via overschrijving via uw favorite banking app.
+						Betalen kan enkel via overschrijving.
 						<br />
 						Hieronder vindt uw een korte samenvatting van wat u besteld heeft
 					</p>
@@ -46,10 +46,13 @@
 					<div class="text-center">
 						<h4>Uw bestelling</h3>
 						<p>
-							{Aantal} Frangipanetaart(en), {Aantal} Rijsttaart(en), <br>{Aantal}
-							Appeltaart(en), {Aantal} Flantaart(en) en {Aantal}
+							{aantal} Frangipanetaart(en), {aantal} Rijsttaart(en), <br>{aantal}
+							Appeltaart(en), {aantal} Flantaart(en) en {aantal}
 							Kriekentaart(en)
 						</p>
+						<p>Uw kan uw taarten afhalen tussen {uren}</p>
+						<p>of</p>
+						<p>Wij komen u taart zaterdag 20 maart leveren op volgend adres: {straat} {huisnummer}, {gemeente}</p>
 					</div>
 					<div class="text-center">
 						<h4>Betalingsinfo</h4>
@@ -80,7 +83,7 @@
 						<input
 							class="form-control"
 							type="text"
-							placeholder="{Prijs}"
+							placeholder="{bedrag}"
 							aria-label="Te_Betalen"
 							readonly
 						/>
@@ -88,7 +91,7 @@
 						<textarea
 							class="form-control"
 							type="text"
-							placeholder="Taartverkoop - {Voornaam} {Achternaam} - {Nr}"
+							placeholder="Taartverkoop - {voornaam} {achternaam} - {volg nr.}"
 							aria-label="Mededeling"
 							rows="3"
 							readonly
@@ -106,5 +109,6 @@
 			integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
 			crossorigin="anonymous"
 		></script>
+		<script src="./main.js"></script>
 	</body>
 </html>
